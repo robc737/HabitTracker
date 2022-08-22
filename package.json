@@ -1,0 +1,24 @@
+{
+  "name": "habit-tracker-webapp",
+  "version": "1.0.0",
+  "description": "Habit Tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robc737/habit-tracker-webapp.git"
+  },
+  "author": "Robert Czyzewski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robc737/habit-tracker-webapp/issues"
+  },
+  "homepage": "https://github.com/robc737/habit-tracker-webapp#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "express": "^4.18.1"
+  }
+}
