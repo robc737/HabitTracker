@@ -6,6 +6,7 @@ body {
     display: flex;
     background-color: deepskyblue;
     color: white;
+    margin-bottom: 20px;
 }
 
 .app-title {
@@ -24,4 +25,12 @@ body {
 .spacer {
     flex: 1;
 }
+
+.view {
+    width: 100%;
+    height: calc(100vh - 86px);
+    color: white;
+    padding: 10px;
+}
+
 

@@ -8,7 +8,7 @@ let counter = 0;
 const app = express();
 app.use('/bootstrap', express.static('node_modules/bootstrap/dist'));
 app.use('/public', express.static('public'));
-app.get('/', function(req, res, next) {
+app.get('/*', function(req, res, next) {
     counter++;
     //res.send('Hello World' + counter);
     // res.render('index', { counter: counter}, (err, html) => {
