@@ -10,33 +10,31 @@ console.log(headerLinks);
 headerLinks.forEach(headerLink => {
    headerLink.addEventListener("click", (event) => {
        const viewObj = linkMap[event.target.innerText];
-       console.log(viewObj.viewId);
-       let view = document.getElementById(viewObj.viewId);
-       console.log(view.classList);
-       console.log(view.className);
-
-       let views = document.querySelectorAll(".view");
-       views.forEach( view => {
-           view.classList.add("d-none");
-       });
-
-       view.classList.remove("d-none");
-
+       showView(viewObj.viewId);
        window.history.pushState({}, '', viewObj.url);
    });
 });
 
-window.addEventListener("popstate", showViewByUrl);
-
-showView();
-
-function showViewByUrl() {
-    console.log(window.location.pathname);
-}
-
 function showView(viewId) {
+    let views = document.querySelectorAll(".view");
+    views.forEach( view => {
+        view.classList.add("d-none");
+    });
 
+    let view = document.getElementById(viewId);
+    view.classList.remove("d-none");
 }
+
+window.addEventListener("popstate", showViewByUrl);
+function showViewByUrl() {
+    let path = window.location.pathname;
+    showView(path.slice(1));
+}
+
+showView('weekly');
+window.history.pushState({}, '', 'weekly');
+
+
 
 const showView2 = () => {
 
