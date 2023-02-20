@@ -23,11 +23,13 @@ app.get('/*', function(req, res, next) {
             'Content-Type': 'text/html'
         }
     }
+    console.dir(options, {depth: null})
+    console.log(__dirname)
     res.sendFile('index.html', options, (err) => {
         if(err) {
             next(err);
         } else {
-            console.log('Sent index.html');
+            console.log('Sent index.html' + counter);
         }
     });
 })
