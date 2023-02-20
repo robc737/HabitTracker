@@ -1,5 +1,6 @@
 const express = require("express");
 //import * as expr from "express";
+const helmet = require("helmet");
 const path = require("path");
 
 const hostname = "127.0.0.1";
@@ -7,6 +8,10 @@ const port = 3000;
 let counter = 0;
 
 const app = express();
+app.use(helmet());
+app.get("/healthcheck", (req, res) => {
+  res.sendStatus(200);
+});
 app.use("/bootstrap", express.static("node_modules/bootstrap/dist"));
 app.use("/public", express.static("public"));
 app.get("/*", function (req, res, next) {
