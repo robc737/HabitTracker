@@ -1,7 +1,72 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Habit Tracker</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/habit-tracker.css" rel="stylesheet">
 </head>
+
 <body>
-    <div>Hello World Html!</div>
+
+<div class="header">
+    <span class="app-title">Habit Tracker</span>
+    <div class="spacer"></div>
+    <a>Weekly</a>
+    <a>Monthly</a>
+    <a>Create Habit</a>
+    <a>Edit Habit</a>
+</div>
+
+<div class="view" id="weekly">
+    <div class="container">
+        <h1>Weekly</h1>
+        <div class="row flex-nowrap">
+            <div class="col text-center">Mon</div>
+            <div class="col text-center">Tues</div>
+            <div class="col text-center">Wed</div>
+            <div class="col text-center">Thurs</div>
+            <div class="col text-center">Fri</div>
+            <div class="col text-center">Sat</div>
+            <div class="col text-center">Sun</div>
+        </div>
+        <div class="row flex-nowrap">
+            <div class="col">
+                <div class="circle">29</div>
+            </div>
+            <div class="col  ">
+                <div class="circle">30</div>
+            </div>
+            <div class="col  ">
+                <div class="circle">31</div>
+            </div>
+            <div class="col  ">
+                <div class="circle">1</div>
+            </div>
+            <div class="col  ">
+                <div class="circle">2</div>
+            </div>
+            <div class="col  ">
+                <div class="circle">3</div>
+            </div>
+            <div class="col  ">
+                <div class="circle">4</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="view d-none" id="monthly">
+    <h1>Monthly</h1>
+</div>
+<div class="view d-none" id="create">
+    <h1>Create Habit</h1>
+</div>
+<div class="view d-none" id="edit">
+    <h1>Edit Habit</h1>
+</div>
+
+
+<script src="public/js/habit-tracker.js"></script>
 </body>
 </html>
