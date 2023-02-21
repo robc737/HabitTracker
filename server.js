@@ -8,12 +8,12 @@ const port = 3000;
 let counter = 0;
 
 const app = express();
-app.all("/*", () => {
-  //log out request here
+app.all("/*", (req, resp, next) => {
+  console.log(req.url);
+  next();
 })
 app.use(helmet(), (req, resp, next) => {
-  console.log("helmet");
-  console.log(req.url);
+ // console.log("helmet");
   next();
 });
 app.get("/healthcheck", (req, res) => {
