@@ -8,7 +8,14 @@ const port = 3000;
 let counter = 0;
 
 const app = express();
-app.use(helmet());
+app.all("/*", () => {
+  //log out request here
+})
+app.use(helmet(), (req, resp, next) => {
+  console.log("helmet");
+  console.log(req.url);
+  next();
+});
 app.get("/healthcheck", (req, res) => {
   res.sendStatus(200);
 });
@@ -32,8 +39,6 @@ app.get("/*", function (req, res, next) {
       "Content-Type": "text/html",
     },
   };
-
-  console.log(options.root);
 
   res.sendFile("index.html", options, (err) => {
     if (err) {
