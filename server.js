@@ -8,12 +8,23 @@ const port = 3000;
 let counter = 0;
 
 const app = express();
-app.use(helmet());
+app.all("/*", (req, resp, next) => {
+  console.log(req.url);
+  next();
+})
+app.use(helmet(), (req, resp, next) => {
+ // console.log("helmet");
+  next();
+});
 app.get("/healthcheck", (req, res) => {
   res.sendStatus(200);
 });
 app.use("/bootstrap", express.static("node_modules/bootstrap/dist"));
 app.use("/public", express.static("public"));
+app.get("/favicon.ico", (req, res) => {
+  console.log("favicon request");
+  res.send("sorry dude no favicon yet");
+});
 app.get("/*", function (req, res, next) {
   counter++;
   //res.send('Hello World' + counter);
@@ -28,8 +39,6 @@ app.get("/*", function (req, res, next) {
       "Content-Type": "text/html",
     },
   };
-
-  console.log(options.root);
 
   res.sendFile("index.html", options, (err) => {
     if (err) {
