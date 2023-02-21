@@ -14,6 +14,10 @@ app.get("/healthcheck", (req, res) => {
 });
 app.use("/bootstrap", express.static("node_modules/bootstrap/dist"));
 app.use("/public", express.static("public"));
+app.get("/favicon.ico", (req, res) => {
+  console.log("favicon request");
+  res.send("sorry dude no favicon yet");
+});
 app.get("/*", function (req, res, next) {
   counter++;
   //res.send('Hello World' + counter);
