@@ -13,7 +13,7 @@ app.all("/*", (req, resp, next) => {
   next();
 })
 app.use(helmet(), (req, resp, next) => {
- // console.log("helmet");
+  //console.log("helmet");
   next();
 });
 app.get("/healthcheck", (req, res) => {
@@ -21,6 +21,7 @@ app.get("/healthcheck", (req, res) => {
 });
 app.use("/bootstrap", express.static("node_modules/bootstrap/dist"));
 app.use("/public", express.static("public"));
+//app.use("/favicon.ico", express.static("public/assets/peps.png"));
 app.get("/favicon.ico", (req, res) => {
   console.log("favicon request");
   res.send("sorry dude no favicon yet");
