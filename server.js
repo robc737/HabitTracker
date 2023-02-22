@@ -1,5 +1,4 @@
 const express = require("express");
-//import * as expr from "express";
 const helmet = require("helmet");
 const path = require("path");
 
@@ -11,7 +10,7 @@ const app = express();
 app.all("/*", (req, resp, next) => {
   console.log(req.url);
   next();
-})
+});
 app.use(helmet(), (req, resp, next) => {
   //console.log("helmet");
   next();
@@ -21,11 +20,8 @@ app.get("/healthcheck", (req, res) => {
 });
 app.use("/bootstrap", express.static("node_modules/bootstrap/dist"));
 app.use("/public", express.static("public"));
-//app.use("/favicon.ico", express.static("public/assets/peps.png"));
-app.get("/favicon.ico", (req, res) => {
-  console.log("favicon request");
-  res.send("sorry dude no favicon yet");
-});
+//either use this or in link tag in in index.html, don't need both
+app.use("/favicon.ico", express.static("public/assets/peps.ico"));
 app.get("/*", function (req, res, next) {
   counter++;
   //res.send('Hello World' + counter);
@@ -45,7 +41,7 @@ app.get("/*", function (req, res, next) {
     if (err) {
       next(err);
     } else {
-      console.log("Sent index.html" + counter);
+      console.log("Sent index.html " + counter);
     }
   });
 });
