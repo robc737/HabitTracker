@@ -47,10 +47,11 @@ function bootstrapExpress() {
       }
     });
   });
-  app.listen(3000, () => {
+  app.listen(3030, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
   });
 }
+
 bootstrapExpress();
 
 //create another server on 8080
@@ -67,4 +68,5 @@ function bootstrapHttp() {
   server.listen(8080);
   console.log("http server running on 8080");
 }
+
 bootstrapHttp();

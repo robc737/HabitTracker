@@ -36,3 +36,9 @@ showView("weekly");
 window.history.pushState({}, "", "weekly");
 
 const showView2 = () => {};
+
+function addElement() {
+  const para = document.createElement("p");
+  para.textContent = "new element";
+  document.getElementById("something")?.append(para);
+}
