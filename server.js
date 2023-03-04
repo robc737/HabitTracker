@@ -39,6 +39,7 @@ function bootstrapExpress() {
       },
     };
 
+    //public/practice/block-inline.html
     res.sendFile("index.html", options, (err) => {
       if (err) {
         next(err);
@@ -47,7 +48,7 @@ function bootstrapExpress() {
       }
     });
   });
-  app.listen(3030, () => {
+  app.listen(port, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
   });
 }
@@ -55,18 +56,18 @@ function bootstrapExpress() {
 bootstrapExpress();
 
 //create another server on 8080
-function bootstrapHttp() {
-  let counter = 0;
-  const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "text/plain");
-    counter++;
-    console.log("Servicing request ", counter);
+// function bootstrapHttp() {
+//   let counter = 0;
+//   const server = http.createServer((req, res) => {
+//     res.statusCode = 200;
+//     res.setHeader("Content-Type", "text/plain");
+//     counter++;
+//     console.log("Servicing request ", counter);
+//
+//     res.end("Hello World");
+//   });
+//   server.listen(8080);
+//   console.log("http server running on 8080");
+// }
 
-    res.end("Hello World");
-  });
-  server.listen(8080);
-  console.log("http server running on 8080");
-}
-
-bootstrapHttp();
+// bootstrapHttp();
