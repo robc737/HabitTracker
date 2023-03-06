@@ -1,68 +1,69 @@
 #header {
-    color: mediumpurple;
+  color: mediumpurple;
 }
 
 .basic div {
-    background-color: aqua;
-    width: 100px;
-    height: 100px;
-    padding: 10px 5px;
-    margin: 20px;
-    border: 3px solid black;
-    text-align: center;
-    vertical-align: middle;
-    display: inline-block;
-    border-radius: 15px;
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+  padding: 10px 5px;
+  margin: 20px;
+  border: 3px solid black;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 15px;
 }
 
 span {
-    background-color: deepskyblue;
-    padding: 10px 5px;
-    margin: 20px;
-    border: 3px solid black;
-    text-align: center;
-    vertical-align: middle;
+  background-color: deepskyblue;
+  padding: 10px 5px;
+  margin: 20px;
+  border: 3px solid black;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .stuff {
-    background-color: greenyellow;
-    border: 3px solid purple;
+  background-color: greenyellow;
+  border: 3px solid purple;
 }
 
 span.stuff {
-    border: 3px dashed peachpuff;
-    font-size: 2rem;
-    width: 200px;
-    height: 300px;
-    display: block;
+  border: 3px dashed peachpuff;
+  font-size: 2rem;
+  width: 200px;
+  height: 300px;
+  display: block;
 }
 
-div.stuff p, span.stuff {
-    font-weight: bold;
+div.stuff p,
+span.stuff {
+  font-weight: bold;
 }
 
 div.stuff.morestuff {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 /* disappears from dom, doesn't take up any space*/
 .displayNone {
-    display: none;
+  display: none;
 }
 
 /* still there but not visible*/
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .flex-container {
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .flex-container div {
-    background-color: magenta;
-    border: 1px solid black;
-    margin-right: 10px;
+  background-color: magenta;
+  border: 1px solid black;
+  margin-right: 10px;
 }
