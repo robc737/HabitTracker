@@ -40,7 +40,7 @@ function bootstrapExpress() {
     };
 
     //public/practice/block-inline.html
-    res.sendFile("index.html", options, (err) => {
+    res.sendFile("index2.html", options, (err) => {
       if (err) {
         next(err);
       } else {
