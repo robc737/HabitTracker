@@ -42,3 +42,8 @@ function addElement() {
   para.textContent = "new element";
   document.getElementById("something")?.append(para);
 }
+
+let el2 = document.querySelector("div.circle");
+el2.addEventListener("click", () => {
+  el2.textContent = "clicked";
+});
