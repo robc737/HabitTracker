@@ -44,13 +44,17 @@ function bootstrapExpress() {
     // });
 
     //public/practice/block-inline.html
-    res.sendFile("index.html", options, (err) => {
-      if (err) {
-        next(err);
-      } else {
-        console.log("Sent index.html " + counter);
-      }
-    });
+    if (!!req.query.page) {
+      res.sendFile("public/practice/" + req.query.page + ".html", options);
+    } else {
+      res.sendFile("index.html", options, (err) => {
+        if (err) {
+          next(err);
+        } else {
+          console.log("Sent index.html " + counter);
+        }
+      });
+    }
   });
 
   app.listen(port, () => {
