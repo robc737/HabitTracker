@@ -1,0 +1,33 @@
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flex-item {
+ background: tomato;
+ padding: 5px;
+ width: 200px;
+ height: 150px;
+ margin-top: 10;
+ line-height: 150px;
+ color: white;
+ font-weight: bold;
+ font-size: 3em;
+ text-align: center;
+}
+
+.navigation {
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: flex-end;
+ list-style: none;
+ margin: 0;
+ background: deepskyblue;
+}
+
+ul.navigation {}
+
