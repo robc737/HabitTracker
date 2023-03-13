@@ -24,6 +24,18 @@ function bootstrapExpress() {
   app.use("/public", express.static("public"));
   //either use this or in link tag in in index.html, don't need both
   app.use("/favicon.ico", express.static("public/assets/peps.ico"));
+
+  const options = {
+    root: path.join(__dirname, ""),
+    headers: {
+      "x-timestamp": Date.now(),
+      "Content-Type": "text/html",
+    },
+  };
+
+  app.get("/flex-practice", (req, res) => {
+    res.sendFile("public/practice/flex-practice.html", options);
+  });
   app.get("/*", function (req, res, next) {
     counter++;
     //res.send("Hello World" + counter);
@@ -31,23 +43,20 @@ function bootstrapExpress() {
     //   console.log("rendered stuff");
     // });
 
-    const options = {
-      root: path.join(__dirname, ""),
-      headers: {
-        "x-timestamp": Date.now(),
-        "Content-Type": "text/html",
-      },
-    };
-
     //public/practice/block-inline.html
-    res.sendFile("index.html", options, (err) => {
-      if (err) {
-        next(err);
-      } else {
-        console.log("Sent index.html " + counter);
-      }
-    });
+    if (!!req.query.page) {
+      res.sendFile("public/practice/" + req.query.page + ".html", options);
+    } else {
+      res.sendFile("index.html", options, (err) => {
+        if (err) {
+          next(err);
+        } else {
+          console.log("Sent index.html " + counter);
+        }
+      });
+    }
   });
+
   app.listen(port, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
   });
